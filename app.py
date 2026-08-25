@@ -1,10 +1,3 @@
-from pathlib import Path
-import zipfile
-
-base = Path("/mnt/data/bot_board")
-base.mkdir(exist_ok=True)
-
-app = r'''
 import random
 import time
 from collections import Counter
@@ -1058,30 +1051,3 @@ else:
                 st.error("🤖 The bot won.")
             else:
                 st.info("🤝 Draw.")
-'''
-
-requirements = """streamlit>=1.38,<2
-python-chess>=1.999
-"""
-
-readme = """# 🤖 BOT BOARD
-
-A Streamlit arcade of board/card games against bots.
-
-Games:
-- Tic Tac Toe
-- Connect 4
-- Checkers
-- Othello
-- Gomoku
-- Battleship
-- Chess
-- Blackjack
-
-Includes fictional BOT BUCKS, achievements, streaks and a daily bonus.
-
-## Run locally
-
-```bash
-pip install -r requirements.txt
-streamlit run app.py
